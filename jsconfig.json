@@ -1,0 +1,11 @@
+// Do not fucking move this thing, since we aliased root with "@" sign, we need to tell VS code how to deal with it
+// Found here, may she gets ethernal love of everything in this world: https://blog.andrewray.me/autocomplete-es-modules-webpack-vscode/
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+    }
+  },
+  "exclude": ["node_modules", "dist"]
+}

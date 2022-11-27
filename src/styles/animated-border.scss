@@ -1,0 +1,131 @@
+// Honestly, stolen from here: https://web.dev/css-border-animations/
+// More exactly here: https://codepen.io/web-dot-dev/pen/oNqoeXo
+
+
+.article-alternative-btns {
+	--angle: 45deg;
+	--opacity: 0.5;
+	box-sizing: border-box;
+	border-radius: 10px;
+	margin: auto;
+	display: grid;
+	place-content: center;
+	text-align: center;
+	font-size: 1.5em;
+	--border-size: 0.3rem;
+	border: var(--border-size) solid transparent;
+
+	/* Paint an image in the border */
+	border-image: conic-gradient(
+		from var(--angle),
+		#2441ffc6 0deg 90deg,
+		#ffffff 90deg 180deg,
+		#2441ffc6 180deg 270deg,
+		#ffffff 270deg 360deg
+	  )
+	  1 stretch;
+
+	// I wanted to make it work just with this, but then it turns buttons and everything around
+	// animation: rotate 4s linear infinite;
+  }
+
+  .article-alternative-row {
+	--angle: 45deg;
+	--opacity: 0.5;
+	box-sizing: border-box;
+	border-radius: 10px;
+	margin: auto;
+	display: grid;
+	text-align: center;
+	--border-size: 0.3rem;
+	border: var(--border-size) solid transparent;
+
+	/* Paint an image in the border */
+	border-image: conic-gradient(
+		from var(--angle),
+		#2441ffc6 0deg 90deg,
+		#ffffff 90deg 180deg,
+		#2441ffc6 180deg 270deg,
+		#ffffff 270deg 360deg
+	  )
+	  1 stretch;
+  }
+
+.rainbow {
+	--angle: 45deg;
+	--opacity: 0.5;
+	box-sizing: border-box;
+
+	border-radius: 10px;
+	// padding: 2rem;
+	margin: auto;
+
+	display: grid;
+	place-content: center;
+	text-align: center;
+
+	font-size: 1.5em;
+
+	--border-size: 0.3rem;
+	border: var(--border-size) solid transparent;
+
+	/* Paint an image in the border */
+	border-image: conic-gradient(
+		from var(--angle),
+		#d53e33 0deg 90deg,
+		#fbb300 90deg 180deg,
+		#377af5 180deg 270deg,
+		#399953 270deg 360deg
+	  )
+	  1 stretch;
+	// background: rgb(255 255 255 / var(--opacity));
+
+	// I wanted to make it work just with this, but then it turns buttons and everything around
+	// animation: rotate 4s linear infinite;
+  }
+
+  // I wanted to make it work just with this, but then it turns buttons and everything around
+//  @keyframes rotate {
+//	100% {
+//		transform: rotate(1turn);
+//	}
+//}
+
+
+  /* Animate when Houdini is available */
+@supports (background: paint(houdini)) {
+	@property --opacity {
+	  syntax: "<number>";
+	  initial-value: 0.5;
+	  inherits: false;
+	}
+
+	@property --angle {
+	  syntax: "<angle>";
+	  initial-value: 0deg;
+	  inherits: false;
+	}
+
+	@keyframes opacityChange {
+	  to {
+		--opacity: 1;
+	  }
+	}
+
+	@keyframes rotate {
+	  to {
+		--angle: 360deg;
+	  }
+	}
+
+	.article-alternative-btns {
+		animation: rotate 4s linear infinite;
+	}
+
+	.article-alternative-row {
+		animation: rotate 4s linear infinite;
+	}
+	.rainbow {
+	  animation: rotate 4s linear infinite, opacityChange 3s infinite alternate;
+	}
+  }

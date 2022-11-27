@@ -1,0 +1,65 @@
+/* =========================================================== */
+/*  Stolen from: https://stackoverflow.com/a/63666883/4267429  */
+/* =========================================================== */
+.leftslide-leave-active,
+.leftslide-enter-active {
+  transition: 1s;
+}
+.leftslide-enter {
+  transform: translate(100%, 0);
+}
+.leftslide-leave-to {
+  transform: translate(-100%, 0);
+}
+
+.rightslide-leave-active,
+.rightslide-enter-active {
+  transition: 1s;
+}
+.rightslide-enter {
+  transform: translate(-100%, 0);
+}
+.rightslide-leave-to {
+  transform: translate(100%, 0);
+}
+
+// They are there originally, but they fuck up everything on my screen
+// .div-slider{
+//   overflow: hidden;
+//   position: relative;
+//   height: 100px;
+//   width: 90%;
+// }
+
+// .div-slider .card {
+//   position: absolute;
+//   height: 100px;
+//   width: 90%;
+//   background-color: #60adff;
+// }
+
+
+// Falling from bottom and top - My implementations
+.bottomslide-leave-active,
+.bottomslide-enter-active {
+  transition: 1s;
+}
+.bottomslide-enter {
+  transform: translate(0, 100%);
+}
+.bottomslide-leave-to {
+  transform: translate(0, -100%);
+}
+
+// Falling from top
+.topslide-leave-active,
+.topslide-enter-active {
+  transition: 1s;
+}
+.topslide-enter {
+  transform: translate(0, -100%);
+}
+.topslide-leave-to {
+  transform: translate(0, 100%);
+}
+

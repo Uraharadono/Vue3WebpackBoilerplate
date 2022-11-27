@@ -1,0 +1,2 @@
+This whole logic has been taken from: https://github.com/paliari/v-autocomplete
+Even though I have modified some stuff heavily, I give credit where it's due.
