@@ -75,9 +75,9 @@ var Vue = require('vue')
 
 //createApp(App)
 //  .use(router)
-//  .use( CKEditor )
 //  .mount('#app');
 
   Vue
     .createApp(App)
+	  .use(router)
     .mount('#app')

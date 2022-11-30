@@ -98,6 +98,11 @@ module.exports = (env, argv) => {
                 favicon: "./public/favicon.ico",
             }),
             new webpack.DefinePlugin({
+                // vue3 feature flags <http://link.vuejs.org/feature-flags>
+                // https://stackoverflow.com/a/70093702/4267429
+                __VUE_OPTIONS_API__: 'true',
+                __VUE_PROD_DEVTOOLS__: 'false',
+
                 // API_BASE_URL: API_BASE_URL[environment],
                 API_BASE_URL: API_BASE_URL[argv.mode],
             }),
@@ -145,7 +150,8 @@ module.exports = (env, argv) => {
             alias: {
                 // 'vue': '@vue/runtime-dom',
                 'Vue': 'vue/dist/vue.esm-bundler.js',
-                // "@": path.join(__dirname, "./src"),
+                "@": path.join(__dirname, "./src"),
+                // '@': paths.resolve('src'),
             },
             extensions: [ '.tsx', '.ts', '.js', '.vue' ],
         },
