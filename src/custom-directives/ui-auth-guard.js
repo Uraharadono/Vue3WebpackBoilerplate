@@ -29,7 +29,13 @@ import { anyMatchInArray } from "@/common/methods";
 // Register a global custom directive called `v-uiAuthGuard`
 export default {
     // When the bound element is inserted into the DOM...
-    inserted: function (el, binding, vnode) {
+
+    // AS per tutorial: https://learnvue.co/tutorials/vue-custom-directives
+    // "directive hooks are different in Vue 2 and Vue 3"
+    // inserted: function (el, binding, vnode) {
+
+    // mounted – same as the old inserted hook
+    mounted: function (el, binding, vnode) {
         //console.log("binding value", binding.value)
         //console.log("current user roles", currentUser.roles)
 

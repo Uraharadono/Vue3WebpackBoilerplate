@@ -11,7 +11,15 @@
         <div class="content-container">
           <div class="content">
 
-            <h1> Pickeeeeeeee </h1>
+            <h1> HOOOOOOOOOME </h1>
+
+            <router-link to="/">
+              Home
+            </router-link> |
+            <router-link to="/about">
+              About
+            </router-link>
+
 
             <!--<div v-if="alert.data.message" :class="`alert ${alert.data.type} no-margin`">
               <div class="row justify-content-end">

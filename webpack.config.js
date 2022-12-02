@@ -18,8 +18,8 @@ let API_BASE_URL = {
 module.exports = (env, argv) => {
     return {
         entry: {
-            // main: "./src/main.js",
-            main: "./src/main.ts",
+            main: "./src/main.js",
+            // main: "./src/main.ts",
             // vendor: // TODO
         },
         output: {
