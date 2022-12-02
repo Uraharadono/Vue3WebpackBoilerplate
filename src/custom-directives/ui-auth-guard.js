@@ -4,7 +4,7 @@ import { anyMatchInArray } from "@/common/methods";
 
 /* Helper links:
  1.) https://forum.vuejs.org/t/vue-v-visible-directive-help/76064
- 2.) https://v2.vuejs.org/v2/guide/custom-directive.html 
+ 2.) https://v2.vuejs.org/v2/guide/custom-directive.html
  3.) https://forum.vuejs.org/t/vue-warn-fail-to-resolve-directive-tiltle/20512/3
 
   Helper links for v-if part:

@@ -149,11 +149,11 @@ module.exports = (env, argv) => {
         resolve: {
             alias: {
                 // 'vue': '@vue/runtime-dom',
-                'Vue': 'vue/dist/vue.esm-bundler.js',
-                "@": path.join(__dirname, "./src"),
-                // '@': paths.resolve('src'),
+                "Vue": 'vue/dist/vue.esm-bundler.js',
+                "@": path.resolve(__dirname, "./src"),
             },
-            extensions: [ '.tsx', '.ts', '.js', '.vue' ],
+            // extensions: [ '.tsx', '.ts', '.js', '.vue' ],
+            extensions: ['.ts', '.tsx', '.js', '.jsx', '.vue', '.json'],
         },
         optimization: {
             // "hashed" is removed, this new logic can be found here: https://webpack.js.org/guides/caching/
